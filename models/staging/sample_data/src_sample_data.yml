@@ -9,4 +9,8 @@ sources:
       - name: lineitem
       - name: nation
       - name: orders
+        loaded_at_field: order_date
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
       - name: region
