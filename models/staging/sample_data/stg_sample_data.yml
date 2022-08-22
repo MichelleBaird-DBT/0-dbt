@@ -6,7 +6,6 @@ models:
       - name: customer_key
         tests:
           - unique
-          - not_null
       - name: name
       - name: address
       - name: nation_key
@@ -18,6 +17,9 @@ models:
   - name: stg_line_items
     columns:
       - name: order_key
+        tests:
+          - unique
+          - not_null
       - name: part_key
       - name: supplier_key
       - name: line_number
@@ -73,6 +75,10 @@ models:
           - unique
           - not_null
       - name: name
+        tests:
+          - accepted_values:
+              values: ['AFRICA','MIDDLE EAST','ASIA','AMERICA']
+              severity: warn
       - name: comment
 
 
