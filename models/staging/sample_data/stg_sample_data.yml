@@ -104,21 +104,19 @@ models:
       - name: comment
         description: '{{ doc("comment") }}'
 
-  
-- name: stg_regions
+  - name: stg_regions
     columns:
       - name: region_key
-      description: primary key of the model
+        description: primary key of model
         tests:
           - unique
           - not_null
       - name: region_name
-      description: region name
+        description: name of region
         tests:
           - accepted_values:
               values: ['AFRICA','MIDDLE EAST','ASIA','AMERICA','EUROPE']
               severity: warn
       - name: comment
-
 
   
