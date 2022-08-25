@@ -6,6 +6,7 @@ models:
       - name: customer_key
         tests:
           - unique
+          - not_null
       - name: name
       - name: address
       - name: nation_key
@@ -74,7 +75,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: name
+      - name: region_name
         tests:
           - accepted_values:
               values: ['AFRICA','MIDDLE EAST','ASIA','AMERICA']
