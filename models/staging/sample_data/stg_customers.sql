@@ -20,4 +20,4 @@ transformed as (
 
 )
 
-select * from transformed
+select * from source
