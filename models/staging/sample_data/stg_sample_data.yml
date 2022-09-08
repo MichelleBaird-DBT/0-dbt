@@ -14,7 +14,7 @@ models:
       - name: address
         description: address of the customer
       - name: nation_key
-        description: foreign key to stg_tpch_nations
+        description: foreign key to stg_nations
       - name: phone_number
         description: phone number of the customer
       - name: account_balance
@@ -27,11 +27,11 @@ models:
     description: staging layer for line items data
     columns:
       - name: order_key
-        description: foreign key to stg_tpch_orders
+        description: foreign key to stg_orders
       - name: part_key
-        description: foreign key to stg_tpch_part_suppliers
+        description: foreign key to stg_part_suppliers
       - name: supplier_key
-        description: foreign key to stg_tpch_suppliers
+        description: foreign key to stg_suppliers
       - name: line_number
         description: sequence of the order items within the order
       - name: quantity
@@ -69,7 +69,7 @@ models:
       - name: name
         description: nation name
       - name: region_key
-        description: foreign key to stg_tpch_regions
+        description: foreign key to stg_regions
         
  
   - name: stg_order
@@ -81,7 +81,7 @@ models:
           - unique
           - not_null
       - name: customer_key
-        description: foreign key to stg_tpch_customers
+        description: foreign key to stg_customers
       - name: status_code
         description: "{{ doc('status_code') }}"
       - name: total_price
