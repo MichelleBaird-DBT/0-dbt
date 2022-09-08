@@ -59,11 +59,10 @@ models:
       - name: order_count
         description: count of order
       - name: gross_item_sales_amount
-        description: '{{ doc("gross_item_sales_amount") }}'
+        description: line item price
       - name: item_discount_amount
-        description: '{{ doc("item_discount_amount") }}'
+        description: item level discount amount. this is always a negative number
       - name: item_tax_amount
-        description: '{{ doc("item_tax_amount") }}'
+        description: item level tax total 
       - name: net_item_sales_amount
-        description: '{{ doc("net_item_sales_amount") }}'
-
+        description: the net total which factors in discount and tax  

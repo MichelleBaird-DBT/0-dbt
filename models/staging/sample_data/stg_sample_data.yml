@@ -21,8 +21,7 @@ models:
         description: total account balance from the customer
       - name: market_segment
         description: market segment of the customer
-      - name: comment
-        description: '{{ doc("comment") }}'
+
 
   - name: stg_line_items
     description: staging layer for line items data
@@ -34,31 +33,30 @@ models:
       - name: supplier_key
         description: foreign key to stg_tpch_suppliers
       - name: line_number
-        description: '{{ doc("line_number") }}'
+        description: sequence of the order items within the order
       - name: quantity
         description: total units
       - name: extended_price
-        description: '{{ doc("extended_price") }}'
+        description: line item price
       - name: discount_percentage
-        description: '{{ doc("discount_percentage") }}'
+        description: percentage of the discount
       - name: tax_rate
         description: tax rate of the order item
       - name: return_flag
-        description: '{{ doc("return_flag") }}'
+        description: letter determining the status of the return
       - name: status_code
         description: status code of the order item
       - name: ship_date
-        description: '{{ doc("ship_date") }}'
+        description: the date the order item is being shipped 
       - name: commit_date
-        description: '{{ doc("commit_date") }}'
+        description: the date the order item is being commited
       - name: receipt_date
-        description: '{{ doc("receipt_date") }}'
+        description: the receipt date of the order item
       - name: ship_instructions
         description: additional instructions on the shipment
       - name: ship_mode
-        description: '{{ doc("ship_mode") }}'
-      - name: comment
-        description: '{{ doc("comment") }}'
+        description: method of shipping
+  
 
   - name: stg_nations
     description: staging layer for nations data
@@ -72,8 +70,7 @@ models:
         description: nation name
       - name: region_key
         description: foreign key to stg_tpch_regions
-      - name: comment
-        description: additional commentary             
+        
  
   - name: stg_order
     description: staging layer for orders data
@@ -86,7 +83,7 @@ models:
       - name: customer_key
         description: foreign key to stg_tpch_customers
       - name: status_code
-        description: status of the order
+        description: "{{ doc('status_code') }}"
       - name: total_price
         description: raw price
       - name: order_date
@@ -101,8 +98,7 @@ models:
         description: id of the clerk
       - name: ship_priority
         description: numeric representation of the shipping priority, zero being the default
-      - name: comment
-        description: '{{ doc("comment") }}'
+
 
   - name: stg_regions
     columns:
@@ -117,6 +113,6 @@ models:
           - accepted_values:
               values: ['AFRICA','MIDDLE EAST','ASIA','AMERICA','EUROPE']
               severity: warn
-      - name: comment
+
 
   

@@ -19,38 +19,38 @@ models:
       - name: order_status_code
         description: status of the order
       - name: return_flag
-        description: '{{ doc("return_flag") }}'
+        description: letter determining the status of the return 
       - name: line_number
-        description: '{{ doc("line_number") }}'
+        description: sequence of the order items within the order 
       - name: order_item_status_code
         description: status of the order item
       - name: ship_date
-        description: '{{ doc("ship_date") }}'
+        description: the date the order item is being shipped
       - name: commit_date
-        description: '{{ doc("commit_date") }}'
+        description: the date the order item is being commited
       - name: receipt_date
-        description: '{{ doc("receipt_date") }}'
+        description: the receipt date of the order item
       - name: ship_mode
-        description: '{{ doc("ship_mode") }}'
+        description: method of shipping
       - name: extended_price
-        description: '{{ doc("extended_price") }}'
+        description: line item price
       - name: quantity
         description: total units
       - name: base_price
         description: base price of item
       - name: discount_percentage
-        description: '{{ doc("discount_percentage") }}'
+        description: percentage of the discount
       - name: discounted_price
-        description: '{{ doc("discounted_price") }}'
+        description: factoring in the discount_percentage, the line item discount total 
       - name: gross_item_sales_amount
-        description: '{{ doc("gross_item_sales_amount") }}'
+        description: line item price 
       - name: discounted_item_sales_amount
-        description: '{{ doc("discounted_item_sales_amount") }}'
+        description: line item (includes quantity) discount amount
       - name: item_discount_amount
-        description: '{{ doc("item_discount_amount") }}'
+        description: item level discount amount. this is always a negative number 
       - name: tax_rate
-        description: '{{ doc("tax_rate") }}'
+        description: tax rate of the order item
       - name: item_tax_amount
         description: item level tax total
       - name: net_item_sales_amount
-        description: '{{ doc("net_item_sales_amount") }}'
+        description: the net total which factors in discount and tax 
